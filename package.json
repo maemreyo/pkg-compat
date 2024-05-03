@@ -8,6 +8,11 @@
     "packages",
     "compatibility"
   ],
+  "homepage": "https://github.com/maemreyo/pkg-compat",
+  "bugs": {
+    "url": "https://github.com/maemreyo/pkg-compat/issues",
+    "email": "ngonhuthanhtrung1409@gmail.com"
+  },
   "author": {
     "name": "Matthew Ngo"
   },
