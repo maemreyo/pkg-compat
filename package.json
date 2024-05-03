@@ -16,7 +16,7 @@
     "type": "git",
     "url": ""
   },
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist/"
@@ -29,14 +29,18 @@
     "clean:all": "npm run clean && (rm -r ./node_modules || true)",
     "cover": "nyc npm run test",
     "cover:check": "nyc --check-coverage --reporter=lcov npm run test",
-    "lint": "eslint --ext .ts --fix src/**/*.ts test/**/*.ts",
+    "lint": "eslint . --fix src/**/*.ts test/**/*.ts",
     "preversion": "npm run build && npm run cover:check",
     "postversion": "git push && git push --tags",
     "prepare": "npm run build",
     "serve": "nodemon ./src/index.ts",
     "test": "mocha",
     "upgrade": "npx npm-check -u",
-    "version": "npm run build && npm run changelog:update"
+    "version": "npm run build && npm run changelog:update",
+    "publish": "npm run build && npm publish",
+    "update": "npm run version && npm run publish",
+    "push": "git push && git push --tags",
+    "release": "npm run update && npm run push"
   },
   "devDependencies": {
     "@types/chai": "^4.3.5",
@@ -63,6 +67,7 @@
     }
   },
   "dependencies": {
+    "semver": "^7.6.0",
     "sitka": "^1.1.1"
   }
 }
