@@ -3,33 +3,28 @@ import { processTargetPackages as getCompatiblePackages } from "./lib/packages";
 export { getCompatiblePackages };
 
 const rawPackages = {
-  "@types/jest": "~29.5",
-  "@types/node": "~20",
-  "@typescript-eslint/eslint-plugin": "~7.6",
-  "@typescript-eslint/parser": "~7.6",
-  "conventional-changelog-cli": "^4.1.0",
-  "cz-conventional-changelog": "^3.3.0",
-  eslint: "~8.56",
-  "eslint-config-prettier": "~9.1",
-  "eslint-plugin-jest": "~28.2",
-  husky: "^8.0.3",
-  jest: "~29.7",
-  "lint-staged": "^13.3.0",
-  nodemon: "^3.1.0",
-  nyc: "^15.1.0",
-  prettier: "~3.2",
-  rimraf: "~5.0",
-  "ts-api-utils": "~1.3",
-  "ts-jest": "~29.1",
-  "ts-node": "^10.9.2",
-  typescript: "~5.4",
+  next: "14.2.3",
+  react: "^18",
+  "react-dom": "^18",
 };
 
 const targetPackages = [
-  "commitizen",
-  "cz-conventional-changelog",
-  "@commitlint/cli",
-  "@commitlint/config-conventional",
+  // "eslint": "^8",
+  // "eslint-config-next": "14.2.3",
+  // "husky": "^9.0.11",
+  // "lint-staged": "^15.2.2",
+  // "postcss": "^8",
+  // "prettier": "^3.2.5",
+  // "tailwindcss": "^3.4.1",
+  // "typescript": "^5"
+  "eslint",
+  "eslint-config-next",
+  "husky",
+  "lint-staged",
+  "postcss",
+  "prettier",
+  "tailwindcss",
+  "typescript",
 ];
 
 (async () => {
