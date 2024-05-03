@@ -1,6 +1,6 @@
 {
   "name": "pkgs-compat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Check the compatibility of a package with given packages",
   "keywords": [
     "nodejs",
