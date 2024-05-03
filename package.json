@@ -1,6 +1,6 @@
 {
   "name": "pkgs-compat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check the compatibility of a package with given packages",
   "keywords": [
     "nodejs",
@@ -29,7 +29,7 @@
     "clean:all": "npm run clean && (rm -r ./node_modules || true)",
     "cover": "nyc npm run test",
     "cover:check": "nyc --check-coverage --reporter=lcov npm run test",
-    "lint": "eslint . --fix src/**/*.ts test/**/*.ts",
+    "lint": "eslint . --fix src/**/*.ts test/*.spec.ts --no-ignore",
     "preversion": "npm run build && npm run cover:check",
     "postversion": "git push && git push --tags",
     "prepare": "npm run build",
