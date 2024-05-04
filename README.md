@@ -1,9 +1,19 @@
-## Installation
-
-- Install it first: `npm i pkgs-compat`
-
 ## Usage
 
+Two options are available:
+
+### Install from `npm i`
+
+* `npm i pkgs-compat`
+
+### Clone this repo
+
+* First, you need to clone this repository
+* Simply add your list of the existing packages
+* Add your target packages that you want to install into your project
+* `npm run serve` and see the results on the terminal
+
+**Example:**
 ```
 <!-- /index.ts -->
 ----------------------------------------------------------------
@@ -53,3 +63,65 @@ Added compatible version 19.3.0 for @commitlint/cli
 Finding common compatible versions for @commitlint/config-conventional
 Added compatible version 19.2.2 for @commitlint/config-conventional
 ```
+
+## Thanks to `https://www.npmpeer.dev/`
+This online tool plays a vital role in the development of this `pkgs-compat`
+
+## Notes
+> This package is in development.
+
+### The Problem
+This package will work properly in most cases, but there are some exceptions where we might need to check for compatibility issues:
+
+  * **Peer dependencies**: If package A (the package need to be installed to the project) has peer dependencies that are not included in our project, we might need to install them explicitly. For example, if A requires a specific version of B, we might need to install that version of B in our project.
+
+  * **Conflicting dependencies**: If our project is using a dependency that conflicts with a dependency inside A, we might need to resolve that conflict. For example, if our project is using a different version of C that conflicts with the version used by A, we might need to resolve that conflict.
+
+
+### How to resolve
+
+Here's an explanation of how to handle the situation manually:
+
+**Step 1: Identify the dependencies**
+
+* Use `npm ls A` or `yarn ls A` to list out the dependencies of A.
+* Identify the specific dependencies that may be causing conflicts with your project's dependencies.
+
+**Step 2: Check for version conflicts**
+
+* Use `npm ls <dependency-name>` or `yarn ls <dependency-name>` to check the version of the dependency in your project.
+* Compare the version with the version required by A.
+* If there's a version conflict, you may need to upgrade or downgrade the dependency to a compatible version.
+
+**Step 3: Check for dependency conflicts**
+
+* Use `npm ls` or `yarn ls` to list out all the dependencies in your project.
+* Identify any dependencies that are conflicting with A's dependencies.
+* Use `npm dedupe` or `yarn dedupe` to remove duplicate dependencies.
+
+**Step 4: Check for compatibility issues**
+
+* Refer to the A documentation to check for any known compatibility issues with your project's dependencies.
+* Check the documentation of your project's dependencies to see if they have any known issues with A.
+
+**Step 5: Resolve conflicts and issues**
+
+* Based on the results of the above steps, resolve any conflicts or issues by upgrading, downgrading, or removing dependencies as necessary.
+* Use `npm install` or `yarn install` to reinstall A and its dependencies after resolving the conflicts.
+
+By following these steps, you can identify and resolve any dependency conflicts or compatibility issues that may arise when installing A.
+
+> Note: `A` is the package that needs to be installed in existing projects
+
+## Contributions
+Feel free to contribute to the project! 
+
+## Follow me
+I would like to invite you to follow me on my social networks:
+* Medium: https://matthew-ngo.medium.com/
+* dev.to: https://dev.to/maemreyo
+* Buy me a coffee: https://buymeacoffee.com/maemreyo
+
+Don't forget to buy me a coffee if you find this helpful to you
+
+<a href="https://www.buymeacoffee.com/maemreyo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 140px !important;" ></a>
